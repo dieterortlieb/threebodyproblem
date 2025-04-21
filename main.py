@@ -1,4 +1,5 @@
 from planetas import Body
+from frame import com
 from parametros import (
                         BLACK,
                         WHITE,
@@ -7,7 +8,9 @@ from parametros import (
                         RED,
                         DARK_GREY,
                         WIDTH,
-                        HEIGHT
+                        HEIGHT,
+                        FIGURE_8,
+                        SUN_PLANET_SATELLITE
                         )
 import pygame
 
@@ -23,11 +26,10 @@ def main():
     run = True 
     clock = pygame.time.Clock()
 
-    body1 = Body(200, 200, 10, RED, 20)
-    body2 = Body(400, 200, 10, WHITE, 20)
-    body3 = Body(300, 300, 10, BLUE, 20)
-    
-    bodies = [body1, body2, body3]
+    # LOAD DIFFERENT SOLUTIONS
+
+    #bodies = [Body(*FIGURE_8[0]), Body(*FIGURE_8[1]), Body(*FIGURE_8[2])]
+    bodies = [Body(*SUN_PLANET_SATELLITE[0]), Body(*SUN_PLANET_SATELLITE[1]), Body(*SUN_PLANET_SATELLITE[2])]
 
     while run:
         clock.tick(60)
@@ -35,13 +37,16 @@ def main():
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                run = False 
+                run = False
                 break
+
 
         for body in bodies:
             body.update_position(bodies)
-            body.draw(screen)
-            body.bounce()
+
+        com_x, com_y = com(bodies)
+        for body in bodies:
+            body.draw(screen, com_x, com_y)
 
         pygame.display.update()
 
