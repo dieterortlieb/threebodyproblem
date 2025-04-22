@@ -24,7 +24,8 @@ m = 1000
 r = 200  # triangle radius
 v = 1.2 # tweak this value for stability
 
-LAGRANGE_TRIANGLE = [[r * math.cos(2 * math.pi / 3), r * math.sin(2 * math.pi / 3), -v*math.sin(2 * math.pi / 3), v*math.cos(2 * math.pi / 3), 8, RED, m],
-                     [r * math.cos(4 * math.pi / 3), r * math.sin(4 * math.pi / 3), -v*math.sin(4 * math.pi / 3), v*math.cos(4 * math.pi / 3), 8, WHITE, m],
-                     [r * math.cos(6 * math.pi / 3), r * math.sin(6 * math.pi / 3), -v*math.sin(6 * math.pi / 3), v*math.cos(6 * math.pi / 3), 8, BLUE, m]]
+LAGRANGE_TRIANGLE = [
+    [r * math.cos(2 * math.pi / 3), r * math.sin(2 * math.pi / 3), -v*math.sin(2 * math.pi / 3), v*math.cos(2 * math.pi / 3), 8, RED, m],
+    [r * math.cos(4 * math.pi / 3), r * math.sin(4 * math.pi / 3), -v*math.sin(4 * math.pi / 3), v*math.cos(4 * math.pi / 3), 8, WHITE, m],
+    [r * math.cos(6 * math.pi / 3), r * math.sin(6 * math.pi / 3), -v*math.sin(6 * math.pi / 3), v*math.cos(6 * math.pi / 3), 8, BLUE, m]]
 
