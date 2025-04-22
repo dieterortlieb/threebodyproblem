@@ -10,7 +10,8 @@ from parametros import (
                         WIDTH,
                         HEIGHT,
                         FIGURE_8,
-                        SUN_PLANET_SATELLITE
+                        SUN_PLANET_SATELLITE,
+                        LAGRANGE_TRIANGLE
                         )
 import pygame
 
@@ -29,7 +30,8 @@ def main():
     # LOAD DIFFERENT SOLUTIONS
 
     #bodies = [Body(*FIGURE_8[0]), Body(*FIGURE_8[1]), Body(*FIGURE_8[2])]
-    bodies = [Body(*SUN_PLANET_SATELLITE[0]), Body(*SUN_PLANET_SATELLITE[1]), Body(*SUN_PLANET_SATELLITE[2])]
+    #bodies = [Body(*SUN_PLANET_SATELLITE[0]), Body(*SUN_PLANET_SATELLITE[1]), Body(*SUN_PLANET_SATELLITE[2])]
+    bodies = [Body(*LAGRANGE_TRIANGLE[0]), Body(*LAGRANGE_TRIANGLE[1]), Body(*LAGRANGE_TRIANGLE[2])]
 
     while run:
         clock.tick(60)
@@ -42,10 +44,8 @@ def main():
 
 
         for body in bodies:
+            com_x, com_y = com(bodies)
             body.update_position(bodies)
-
-        com_x, com_y = com(bodies)
-        for body in bodies:
             body.draw(screen, com_x, com_y)
 
         pygame.display.update()

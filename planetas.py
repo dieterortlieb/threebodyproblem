@@ -30,12 +30,12 @@ class Body:
 
         self.pos_x = pos_x
         self.pos_y = pos_y
+        self.x_vel = vx
+        self.y_vel = vy
         self.radius = radius
         self.color = color
         self.mass = mass
 
-        self.x_vel = vx
-        self.y_vel = vy
         
     def draw(self, screen, com_x, com_y):
         """
