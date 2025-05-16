@@ -1,5 +1,3 @@
-from planetas import Body
-
 def com(bodies: list):
     """
     Calculate Center of Mass for the System

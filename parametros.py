@@ -22,7 +22,7 @@ SUN_PLANET_SATELLITE = [[0, 0, 0, 0, 12, RED, 5000],
 
 m = 1000
 r = 200  # triangle radius
-v = 1.5 # tweak this value for stability
+v = 1.7 # tweak this value for stability
 
 LAGRANGE_TRIANGLE = [
     [r * math.cos(2 * math.pi / 3), r * math.sin(2 * math.pi / 3), -v*math.sin(2 * math.pi / 3), v*math.cos(2 * math.pi / 3), 8, RED, m],
